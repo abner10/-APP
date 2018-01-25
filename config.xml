@@ -1,10 +1,10 @@
-<widget id="A6961352947885"  version="0.0.1">
+<widget id="A6061026373627"  version="0.0.1">
 	<name>wangyimusic</name>
 	<description>
 	    仿网易云音乐
 	</description>
-	<author email="2963433130@qq.com" href="2963433130@qq.com">
-	    2963433130@qq.com
+	<author email="1370958525@qq.com" href="1370958525@qq.com">
+	    1370958525@qq.com
 	</author>
 	<content src="index.html" />
 	<preference name="pageBounce" value="false"/>
@@ -29,4 +29,3 @@
 	<permission name="hardware"/>
 	<access origin="*"/>
 </widget>
-

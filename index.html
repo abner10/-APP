@@ -1,823 +1,818 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <title>网易云音乐</title>
-    <link rel="stylesheet" type="text/css" href="./css/api.css" />
-    <link rel="stylesheet" type="text/css" href="./css/common.css" />
-<link rel="stylesheet" href="path/to/parallax.css" />
-<link rel="stylesheet" href="path/to/parallax-animation.css" />
 
-    <style>
-/* custom */
-section[data-id="1"] {
-	background-color: #3498db;
-}
-section[data-id="2"] {
-	background-color: #40d47e;
-}
-section[data-id="3"] {
-	background-color: #ff8c81;
-}
-section[data-id="4"] {
-	background-color: #3498db;
-}
-.box1 {
-	width: 100px;
-	height: 200px;
-	background-color: #ecf0f1;
-	position: absolute;
-	left: 160px; top: 126px;
-}
-.box2 {
-	width: 200px;
-	height: 100px;
-	background-color: #8e44ad;
-	position: absolute;
-	left: 60px; top: 226px;
-}
-.box3 {
-	width: 100px;
-	height: 100px;
-	background-color: #34495e;
-	position: absolute;
-	left: 160px; top: 226px;
-}
-.box4 {
-	width: 50px;
-	height: 50px;
-	background-color: #e74c3c;
-	position: absolute;
-	left: 185px; top: 250px;
-}
-    /* 头部样式 */
-    #firstHeader {background-color: #EF1DED;}
-    #secHeader {background-color:  #EF1DED;}
-    #thridHeader {background-color:  #EF1DED;}
-    #fortheader {background-color:  #EF1DED;}
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" class="ancient-ie old-ie no-js bit-html" dir="ltr" lang="zh-CN">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" class="ancient-ie old-ie no-js bit-html" dir="ltr" lang="zh-CN">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" class="old-ie no-js bit-html" dir="ltr" lang="zh-CN">
+<![endif]-->
+<!--[if IE 9]>
+<html id="ie9" class="old-ie9 no-js bit-html" dir="ltr" lang="zh-CN">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js bit-html" dir="ltr" lang="zh-CN">
+<!--<![endif]-->
+<head>
+	<!-- for 360 -->
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile"> <!-- for baidu -->
+	<meta http-equiv="Cache-Control" content="no-transform" /> <!-- for baidu -->
+    <meta name="MobileOptimized" content="width"/><!-- for baidu -->
+    <meta name="HandheldFriendly" content="true"/><!-- for baidu -->
 
-    .topbar {background: #EF1DED) ; height:50px; border-bottom: 10px solid #DDDFE3;position: relative;}
-    .topbar_title {display: inline-block;font-size: 20px; line-height: 50px;padding-left: 12px;}
-    .hr01, .hr02 {height: 28px;}
-    .headerico {padding: 11px 15px 11px 15px;}
-    .headericohover {background: #EF1DED;}
-    .fr{float: right;}
-    .fl{float: left;}
-    .pa {position: absolute;}
-    img {vertical-align: top;}
+	<!-- start of customer header -->
+		<!-- end of customer header -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+				<title>卡尔西然官方网站设计</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/xmlrpc.php" />
+		<!--[if lt IE 9]>
+	<script src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/FeiEditor/bitSite/js/html5shiv.min.js"></script>
+	<![endif]-->
+		<!--[if lt IE 9]>
+	<script src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/FeiEditor/bitSite/js/respond.min.js"></script>
+	<![endif]-->
+		<style type="text/css" id="static-stylesheet"></style>
+	<link rel="stylesheet" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/cache/scripts/5cb1499d23fd96e016d1a73c1d60d56a.css" type="text/css" media="all" /> <!-- Cache! -->
+<style type="text/css">
 
-     /*第一头部*/
-    .egret-header-box {height: 50px;}
-    .egret-img img {height: 30px;padding: 10px;}
-    .egret-header-search {background-color: #fff; position: absolute; left: 60px; right: 20px; height: 34px; margin-top: 8px;border-radius: 4px;}
-    .egret-header-search img {margin-left: 30px; height: 20px; margin-top: 7px;}
-    .egret-header-search input {line-height: 24px;font-size: 14px;padding-top: 5px;}
-    .egret-header-search input:focus {/*border:0;*/ outline:none;}
-
-     /* 第二头部 */
-    .egret-header-text {line-height: 50px;color: #fff;font-size: 16px;padding: 0 10px;}
-    .egret-header-title {position: absolute;width: 100%;text-align: center;line-height: 50px;color: #fff;font-size: 20px;}
-
-
-    /* 第三头部 */
-    .egret-switchframe {position: absolute; left: 90px; right: 90px;background-color: #fcfcfc;text-align: center;height: 30px;line-height: 30px;bottom: 10px;border-radius: 4px;color: #fff;border: 1px solid #fff;}
-    .egret-switchframe div {width: 50%;display: inline-block;color: #fff;background-color: #EF1DED;}
-    .egret-switchframe div:first-child {border-radius: 4px 0 0 4px;}
-    .egret-switchframe div:last-child {border-radius: 0px 4px 4px 0px;}
-    .egret-switchframe-selectswitch {background-color: #fff !important;color: #EF1DED !important;}
-
-     /* 头部切换样式 */
-     .titlebar {display: none;}
-     .activebar {display: block;}
-
-     /* 底部切换按钮样式 */
-     ul {display: -webkit-box; display: -webkit-flex; display: flex; }
-     #footer {height: 51px; /*line-height: 50px;*/ background-color: #413A36;border-top: 1px solid #332E2A; }
-     #footer li{-webkit-box-flex: 1; -webkit-flex: 1; flex:1; /*height: 40px;*/}
-
-     /* 选项卡样式 */
-     .scrollbar {display: -webkit-box;display: -webkit-flex; text-align: center; height: 40px; line-height: 40px;background: #EBECF0;font-size: 12px;position: relative;}
-     .col1 {-webkit-box-flex:1;-webkit-flex: 1;flex:1;color: #909090;}
-     .indexbar {position: absolute;/*background: #0fc;*/width: 50%;height: 5px;left: 0px;bottom: 0px;-webkit-transition: 300ms;}
-     .redbox {background: #DB4646;width: 40px;height: 5px;position: relative;left: auto;right: auto; margin-left: auto; margin-right: auto;}
-
-     /********************/
-     /* 底部按钮原始样式 */
-     /********************/
-     .bbtn01 {background: url(./image/main_index01.png) no-repeat center 4px; }
-     .bbtn02 {background: url(./image/main_index02.png) no-repeat center 4px; }
-     .bbtn03 {background: url(./image/main_index03.png) no-repeat center 4px; }
-     .bbtn04 {background: url(./image/main_index04.png) no-repeat center 4px; }
-     .bottom_btn {width: 99%; /*height: 43px;*/padding-top: 21px;background-position-y: 4px; background-size: 24px;  font-size: 10px; color: #A5A5A5;}
-
-     /* 底部按钮激活样式 */
-     .activebtn0 {/*background: url(./image/main_index01pressed.png) no-repeat center 4px; */}
-     .activebtn1 {/*background: url(./image/main_index02pressed.png) no-repeat center 4px; */}
-     .activebtn2 {/*background: url(./image/main_index03pressed.png) no-repeat center 4px; */}
-     .activebtn3 {/*background: url(./image/main_index04pressed.png) no-repeat center 4px; */}
-     .activebtn {color:#fff; background-size: 24px; background-color: #EF1DED;}底部颜色显示
-     .bottomhover {background-color: #46494B;}
-
-     /* 本地刷新图标 */
-     #localrefresh {display:none;float: right; width: 40px; padding: 5px 10px;}
-
-
-.navbar {display: -webkit-box; -webkit-box-orient: horizontal; position: relative; height: 40px; box-sizing: border-box; background: #fff; border-bottom: 1px solid #e0e0e0; }
-    .navbar-item {display: block; -webkit-box-flex: 1; width: 100%; line-height: 40px;  font-size: 16px; text-align: center;color: #000; }
-    .navbar-item-hov {background-color: rgba(254,242,228,0.7); }
-    .navbar-item-active {color: #EF1DED; }
-    #navmark {position: absolute; left: 0px; bottom: 0px; -webkit-transition: 300ms; text-align: center; height: 2px;background-color: #EF1DED;}
-
-    </style>
-</head>
-<body>
-	<div class="wrapper">
-	<div class="pages">
-
-		<!-- 第一屏 -->
-		<section class="page">
-			<div class="box1" data-animation="slideToBottom" data-timing-function="ease-in"></div>
-			<div class="box2" data-animation="slideToTop" data-delay="300" data-timing-function="ease-out"></div>
-			<div class="box3" data-animation="slideToRight" data-delay="600" data-timing-function="linear"></div>
-			<div class="box4" data-animation="slideToLeft" data-delay="900" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
-		</section>
-
-        <!-- 第二屏 -->
-		<section class="page">
-			<div class="box1" data-animation="followSlide" data-duration="1000"></div>
-			<div class="box2" data-animation="followSlide" data-delay="200" data-duration="1000"></div>
-			<div class="box3" data-animation="followSlide" data-delay="400" data-duration="1000"></div>
-			<div class="box4" data-animation="followSlide" data-delay="600" data-duration="1000"></div>
-		</section>
-
-        <!-- 第三屏 -->
-		<section class="page">
-			<div class="box1" data-animation="fadeInToBottom"></div>
-			<div class="box2" data-animation="fadeInToTop" data-delay="200"></div>
-			<div class="box3" data-animation="fadeInToLeft" data-delay="400"></div>
-			<div class="box4" data-animation="fadeInToRight" data-delay="600"></div>
-		</section>
-
-		<!-- 第四屏 -->
-		<section class="page">
-			<div class="box1" data-animation="fadeIn"></div>
-			<div class="box2" data-animation="fadeOut" data-delay="800"></div>
-		</section>
-
-	</div>
-	</div>
-
-
-    <div id="wrap">
-		<div class="pages vertical/horizontal  default/cover  forward/backward">
-
-		<!-- 为 page 添加 data-id，当前 page 会自动添加 current 类(翻页后立即添加) -->
-		<section data-id="1" class="current"></section>
-			<section data-id="2"></section>
-			<section data-id="3"></section>
-			<section data-id="4"></section>
-	</div>
-        <!-- 第一头部 -->
-        <div id="firstHeader" class="titlebar activebar">
-            <div class="egret-header topbar normalHeader">
-                <div class="egret-header-box egret-img fl" onclick="openfindmusic()"><img src="./image/searchvoice.png" alt=""></div>
-                <div class="egret-header-box">
-                    <div class="egret-header-search">
-                        <img src="./image/header_search.png" alt="">
-                        <input type="text" placeholder="搜索音乐、歌词、电台">
-                    </div>
-                </div>
-            </div>
-
-            <nav class="navbar" id="firstHeaderIndex">
-                <a id="navbar-item-recommend" class="navbar-item navbar-item-active" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(0);">推荐商品</a>
-                <a id="navbar-item-rank" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(1);">歌单</a>
-                <a id="navbar-item-favorite" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(2);">主播电台</a>
-                <a id="navbar-item-ranklist" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(3);">排行榜</a>
-                <mark id="navmark"></mark>
-            </nav>
-
-        </div>
-
-        <!-- 第二头部 -->
-        <div id="secHeader" class="titlebar">
-            <div class="egret-header topbar">
-                <div class="egret-header-title">我的音乐</div>
-                <div class="egret-header-text fl pa" onclick="openframe02more ()">更多</div>
-            </div>
-        </div>
-
-        <!-- 第三头部 -->
-        <div id="thridHeader" class="titlebar">
-            <div class="egret-header topbar">
-                <div class="egret-switchframe">
-                    <div class="egret-switchframe-leftbtn egret-switchframe-selectswitch" onclick="setSecondFramegroupIndex(0)">关注</div><div class="egret-switchframe-rightbtn" onclick="setSecondFramegroupIndex(1)">身边</div>
-                </div>
-                <div  class="egret-img"><img src="./image/frame03cover/cm2_top_icn_invite_prs.png" alt="" onclick="addfriend()" ></div>
-            </div>
-        </div>
-
-
-        <!-- 第四头部 -->
-        <div id="fortheader" class="titlebar">
-            <div class="egret-header topbar">
-                <div class="egret-header-title">账号</div>
-            </div>
-        </div>
-
-      <div id="main">
-
-      </div>
-
-      <div id="footer">
-        <ul>
-          <li tapmode="activebtn0 activebtn" onclick="switchframe('first_frame')">
-            <a class="bottom_btn bbtn01 weixin activebtn activebtn0">发现音乐</a>
-          </li>
-
-          <li tapmode="activebtn1 activebtn" onclick="switchframe('second_frame')">
-            <a class="bottom_btn bbtn02 communicate">我的音乐</a>
-          </li>
-
-          <li tapmode="activebtn2 activebtn" onclick="switchframe('third_frame')">
-            <a class="bottom_btn bbtn03 discover">朋友</a>
-          </li>
-
-          <li tapmode="activebtn3 activebtn" onclick="switchframe('forth_frame')">
-            <a class="bottom_btn bbtn04 home">账号</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</body>
-<script>
-
-// 下面的都是默认属性
-$('.pages').parallax({
-	direction: 'vertical', 	// horizontal (水平翻页)
-	swipeAnim: 'default', 	// cover (切换效果)
-	drag:      true,		// 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
-	loading:   false,		// 有无加载页
-	indicator: false,		// 有无指示点
-	arrow:     false,		// 有无指示箭头
-	/*
-	 * 翻页后立即执行
-	 * {int} 		index: 第几页
-	 * {DOMElement} element: 当前页节点
-	 * {String}		directation: forward(前翻)、backward(后翻)、stay(保持原页)
-	 */
-	onchange: function(index, element, direction) {
-		// code here...
-	},
-	/*
-	 * 横竖屏检测
-	 * {String}		orientation: landscape / protrait
-	 */
-	orientationchange: function(orientation) {
-
-	}
-
-});
-
-</script>
-	<script src="path/to/zepto.min.js"></script>
-<script src="path/to/parallax.js"></script>
-<script>
-  $('.pages').parallax();
-</script>
-<script type="text/javascript" src="./script/api.js"></script>
-
+</style>
 <script type="text/javascript">
-var firstHeader = $api.byId('firstHeader');
-var secHeader = $api.byId('secHeader');
-var thirdHeader = $api.byId('thridHeader');
-var fortheader = $api.byId('fortheader');
-var firstHeaderOffset;
-var firstHeaderIndexHeight;
+/* <![CDATA[ */
+/* dt-plugins */
+var dtLocal = {"passText":"\u67e5\u770b\u8fd9\u4e2a\u52a0\u5bc6\u8d44\u8baf\uff0c\u8bf7\u5728\u4e0b\u9762\u8f93\u5165\u5bc6\u7801\uff1a","moreButtonAllLoadedText":"\u5168\u90e8\u5df2\u52a0\u8f7d","postID":"2160","ajaxurl":"http:\/\/w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com\/http:\/\/w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com\/admin\/admin-ajax.php","contactNonce":"779e646f07","ajaxNonce":"f377e28bc8","pageData":{"type":"page","template":"page","layout":null},"themeSettings":{"smoothScroll":"on"}};
+/* thickbox */
+var thickboxL10n = {"next":"\u4e0b\u4e00\u5f20 >","prev":"< \u4e0a\u4e00\u5f20","image":"\u56fe\u7247","of":"\/","close":"\u5173\u95ed","noiframes":"\u8fd9\u4e2a\u529f\u80fd\u9700\u8981iframe\u7684\u652f\u6301\u3002\u60a8\u53ef\u80fd\u7981\u6b62\u4e86iframe\u7684\u663e\u793a\uff0c\u6216\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u529f\u80fd\u3002","loadingAnimation":"\/\/fast.qifeiye.com\/FeiEditor\/bitSite\/images\/preloader.gif"};
 
-var main      = $api.byId('main');
-var mainPos   = $api.offset(main);
-
-var footer    = $api.byId('footer');
-var footerPos = $api.offset(footer);
-
-var isFirstOpen = false;
-var isSecondOpen = false;
-var isThirdOpen = false;
-var isForthOpen = false;
-
-function emptyopt() {}
-
-// 打开frame
-function openframe02more () {
-    api.openFrame({
-        name: 'frame02more',
-        url: './html/second_frame/frame02_more.html',
-        rect: {
-            x: 0,
-            y: firstHeaderOffset.h,
-            w: 'auto',
-            h: 'auto'
-        },
-        bounces:false,
-        delay: 200
-    });
-}
-
-function openLeftgroup() {
-    // var footer = $api.byId('footer');
-    // var footerPos = $api.offset(footer);
-
-    var thridHeader = document.getElementById('thridHeader');
-    var thridHeader = $api.offset(thridHeader);
-
-    // 清除右部class
-    var leftbtn  = document.getElementsByClassName('egret-switchframe-leftbtn')[0];
-    var rightbtn = document.getElementsByClassName('egret-switchframe-rightbtn')[0];
-
-    // 注意，类名的前面有一个空格
-    rightbtn.className = 'egret-switchframe-rightbtn';
-    leftbtn.className  = 'egret-switchframe-leftbtn egret-switchframe-selectswitch';
-
-    api.openFrame({
-        name: 'frame0301',
-        url: './html/third_frame/frame0301.html',
-        rect: {
-            x: 0,
-            y: thridHeader.h,
-            w: 'auto',
-            h: (api.frameHeight - footerPos.h - thridHeader.h)
-        },
-        bounces: false,
-        delay: 200
-    });
-}
-
-function openRightgroup() {
-    // var footer = $api.byId('footer');
-    // var footerPos = $api.offset(footer);
-
-    var thridHeader = document.getElementById('thridHeader');
-    var thridHeader = $api.offset(thridHeader);
-
-    // 清除左部class
-    var leftbtn  = document.getElementsByClassName('egret-switchframe-leftbtn')[0];
-    var rightbtn = document.getElementsByClassName('egret-switchframe-rightbtn')[0];
-
-    rightbtn.className = 'egret-switchframe-rightbtn egret-switchframe-selectswitch';
-    leftbtn.className  = 'egret-switchframe-leftbtn';
-
-    api.openFrame({
-        name: 'frame0302',
-        url: './html/third_frame/frame0302.html',
-        rect: {
-            x: 0,
-            y: thridHeader.h,
-            w: 'auto',
-            h: (api.frameHeight - footerPos.h - thridHeader.h)
-        },
-        bounces: false,
-        delay: 200
-    });
-}
-
-function addfriend () {
-    api.openWin({
-        name: 'addfriend',
-        url: './html/third_frame/addfriend.html',
-        bounces: false,
-        opaque: false
-    });
-}
-function openNewWindow(type) {
-    api.openWin({
-        name: type,
-        url: './html/' + type + '.html',
-        pageParam: {},
-        bounces: false,
-        opaque: false
-    });
-}
-
-function openSearch() {
-    api.openWin({
-        name: 'search',
-        url: './html/search.html',
-        bounces: false,
-        delay: 200
-    });
-}
-
-function openfindmusic () {
-    api.openWin({
-        name: 'findmusic',
-        url: './html/findmusic.html',
-        bounces: false,
-        delay: 200
-    });
-}
-
-// 随意切换按钮
-function randomSwitchBtn(name, index) {
-    var lis = $api.domAll('.bottom_btn');
-    var i = 0,
-        len = lis.length;
-    var curLi = lis[index];
-
-    for (i; i < len; i++) {
-        var thisLi = lis[i];
-        if (thisLi === curLi) {
-            $api.addCls(thisLi, 'activebtn');
-            $api.addCls(thisLi, 'activebtn' + index);
-            continue;
-        } else {
-            if ($api.hasCls(thisLi, 'activebtn')) {
-                $api.removeCls(thisLi, 'activebtn');
-                $api.removeCls(thisLi, 'activebtn' + i);
-            }
-        }
-    }
-
-    // 切换头部
-    var lis = $api.domAll('.titlebar');
-    var i = 0,
-        len = lis.length;
-    var curLi = lis[index];
-
-    for (i; i < len; i++) {
-        var thisLi = lis[i];
-        if (thisLi === curLi) {
-            $api.addCls(thisLi, 'activebar');
-            $api.addCls(thisLi, 'activebar' + index);
-            continue;
-        } else {
-            if ($api.hasCls(thisLi, 'activebar')) {
-                $api.removeCls(thisLi, 'activebar');
-                $api.removeCls(thisLi, 'activebar' + i);
-            }
-        }
-    }
-
-    $api.fixStatusBar( $api.dom( '.titlebar.activebar .topbar') );
-}
-
-// 隐藏所有的一级frame
-function hideAllFrame() {
-    // api.setFrameAttr({
-    //     name: 'first_frame',
-    //     hidden:true
-    // });
-    api.setFrameAttr({
-        name: 'second_frame',
-        hidden: true
-    });
-    // api.setFrameAttr({
-    //     name: 'third_frame',
-    //     hidden: true
-    // });
-    api.setFrameGroupAttr({
-        name: 'framegroup01',
-        hidden: true
-    });
-    api.setFrameGroupAttr({
-        name: 'framegroup02',
-        hidden: true
-    });
-    api.setFrameAttr({
-        name: 'forth_frame',
-        hidden: true
-    });
-    // api.setFrameAttr({
-    //     name: 'frame0301',
-    //     hidden: true
-    // });
-    // api.setFrameAttr({
-    //     name: 'frame0302',
-    //     hidden: true
-    // });
-}
-
-// 自己修复ios显示frame的时候bug
-// ios自己主动隐藏后，再open就不显示了
-function showgroup(type) {
-    api.setFrameGroupAttr({
-        name: type ,
-        hidden: false
-    });
-}
-
-// 展示指定的frame
-function showframe(type) {
-    api.setFrameAttr({
-        name: type,
-        hidden: false
-    });
-}
-
-function setFrameGroupIndex(frameIndex) {
-    api.setFrameGroupIndex({
-        name: 'framegroup01',
-        index: frameIndex,
-        scroll: true
-    });
-}
-
-function setFrameGroupStatus(frameIndex) {
-
-    switch (frameIndex) {
-        case 0:
-            {
-                $api.byId('navbar-item-recommend').className = "navbar-item navbar-item-active";
-                $api.byId('navbar-item-rank').className      = "navbar-item";
-                $api.byId('navbar-item-favorite').className  = "navbar-item";
-                $api.byId('navbar-item-ranklist').className  = "navbar-item";
-                var num = (api.winWidth / 4) * frameIndex;
-                $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
-
-                break;
-            }
-        case 1:
-            {
-                $api.byId('navbar-item-recommend').className = "navbar-item";
-                $api.byId('navbar-item-rank').className      = "navbar-item navbar-item-active";
-                $api.byId('navbar-item-favorite').className  = "navbar-item";
-                $api.byId('navbar-item-ranklist').className  = "navbar-item";
-                var num = (api.winWidth / 4) * frameIndex;
-                $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
-                break;
-            }
-        case 2:
-            {
-                $api.byId('navbar-item-recommend').className = "navbar-item";
-                $api.byId('navbar-item-rank').className      = "navbar-item";
-                $api.byId('navbar-item-favorite').className  = "navbar-item navbar-item-active";
-                $api.byId('navbar-item-ranklist').className  = "navbar-item";
-                var num = (api.winWidth / 4) * frameIndex;
-                $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
-                break;
-            }
-        case 3:
-            {
-                $api.byId('navbar-item-recommend').className = "navbar-item";
-                $api.byId('navbar-item-rank').className      = "navbar-item";
-                $api.byId('navbar-item-favorite').className  = "navbar-item";
-                $api.byId('navbar-item-ranklist').className  = "navbar-item navbar-item-active";
-                var num = (api.winWidth / 4) * frameIndex;
-                $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
-                break;
-            }
-        default:
-            break;
-    }
-}
-
-// 打开第一个framegroup
-function openFirstFramegroup() {
-    api.openFrameGroup({
-        name: 'framegroup01',
-        background: '#FFF',
-        scrollEnabled: true,
-        rect: {
-            x: 0,
-            y: firstHeaderOffset.h + firstHeaderIndexHeight,
-            w: "auto",
-            h: api.frameHeight - firstHeaderOffset.h - firstHeaderIndexHeight - footerPos.h
-        },
-        index: 0,
-        frames: [{
-            name: 'frame01_recommand',
-            url: './html/first_frame/frame01_recommand.html',
-            bounces: false,
-        }, {
-            name: 'frame01_list',
-            url: './html/first_frame/frame01_list.html',
-            bounces: false,
-        }, {
-            name: 'frame01_radio',
-            url: './html/first_frame/frame01_radio.html',
-            bounces: false,
-        }, {
-            name: 'frame01_rank',
-            url: './html/first_frame/frame01_rank.html',
-            bounces: false,
-        }]
-    }, function(ret) {
-        setFrameGroupStatus(ret.index);
-    });
-}
-
-// -----------------------------------
-// 第二个framegroup
-// -----------------------------------
-function setSecondFramegroupIndex(frameIndex) {
-    if (frameIndex === 0) {
-        var thridHeader = document.getElementById('thridHeader');
-        var thridHeader = $api.offset(thridHeader);
-
-        // 清除右部class
-        var leftbtn  = document.getElementsByClassName('egret-switchframe-leftbtn')[0];
-        var rightbtn = document.getElementsByClassName('egret-switchframe-rightbtn')[0];
-
-        // 注意，类名的前面有一个空格
-        rightbtn.className = 'egret-switchframe-rightbtn';
-        leftbtn.className  = 'egret-switchframe-leftbtn egret-switchframe-selectswitch';
-
-    }
-    else {
-        var thridHeader = document.getElementById('thridHeader');
-        var thridHeader = $api.offset(thridHeader);
-
-        // 清除左部class
-        var leftbtn  = document.getElementsByClassName('egret-switchframe-leftbtn')[0];
-        var rightbtn = document.getElementsByClassName('egret-switchframe-rightbtn')[0];
-
-        rightbtn.className = 'egret-switchframe-rightbtn egret-switchframe-selectswitch';
-        leftbtn.className  = 'egret-switchframe-leftbtn';
-    }
-
-    api.setFrameGroupIndex({
-        name: 'framegroup02',
-        index: frameIndex,
-        scroll: false
-    });
-}
-// 打开第二个framegroup
-function openSecondFramegroup() {
-    api.openFrameGroup({
-        name: 'framegroup02',
-        background: '#FFF',
-        scrollEnabled: false,
-        rect: {
-            x: 0,
-            y: firstHeaderOffset.h,
-            w: "auto",
-            h: api.frameHeight - firstHeaderOffset.h - footerPos.h
-        },
-        index: 0,
-        frames: [{
-            name: 'frame03_attention',
-            url: './html/third_frame/frame0301.html',
-            bounces: false,
-        }, {
-            name: 'frame03_list',
-            url: './html/third_frame/frame0302.html',
-            bounces: false,
-        }]
-    }, function(ret) {
-
-    });
-}
-
-// 打开frame
-function openframeinstance(frame, marginTop, isBounce) {
-    api.openFrame({
-        name: frame,
-        url: './html/' + frame + '/' + frame + '_body.html',
-        rect: {
-            x: 0,
-            y: marginTop,
-            w: 'auto',
-            h: api.frameHeight - marginTop - footerPos.h
-        },
-        // pageParam: {name: marginTop + footerPos.h},
-        bounces: false,
-        vScrollBarEnabled: false,
-        hScrollBarEnabled: false,
-        delay: 200
-    });
-}
-
-// 移动滑动块
-function sliderbarCallback(id, num) {
-
-    // 得到背景元素的宽度
-    // var width=parseInt(window.getComputedStyle($api.byId('matchwidth'),null).width);
-    var width = parseInt(api.frameWidth / 2);
-    // api.alert({msg:width});
-    if (num != 0) {
-        num = width;
-    }
-    // 移动背景元素的宽度  在index.html不能获得 forth_frame.html上面的dom，虽然是在同一个手机屏幕上
-    $api.css($api.byId(id), "-webkit-transform:translate(" + num + "px,0)");
-}
-
-// ===================================
-// 响应底部按钮的切换frame
-// ===================================
-function switchframe(type) {
-    // alert(firstHeaderOffset.h);
-
-    switch (type) {
-        case 'first_frame':
-            randomSwitchBtn('first_frame', 0);
-            hideAllFrame();
-            if (isFirstOpen) {
-                showgroup('framegroup01');
-            }
-            else {
-                openFirstFramegroup();
-                isFirstOpen = true;
-            }
-            // openframeinstance('first_frame', firstHeaderOffset.h, false);
-            break;
-        case 'second_frame':
-            randomSwitchBtn('second_frame', 1);
-            hideAllFrame();
-            if (isSecondOpen) {
-                showframe('second_frame');
-            }
-            else {
-                openframeinstance('second_frame', firstHeaderOffset.h, false);
-                isSecondOpen = true;
-            }
-
-
-            // showgroup('hot');
-            break;
-        case 'third_frame':
-            randomSwitchBtn('third_frame', 2);
-            hideAllFrame();
-            if (isThirdOpen) {
-                showgroup('framegroup02');
-            }
-            else {
-                openSecondFramegroup();
-                isThirdOpen = true;
-            }
-
-            // openframeinstance('third_frame', firstHeaderOffset.h, false);
-            // openLeftgroup();
-            // showframe('third_frame');
-            break;
-        case 'forth_frame':
-            randomSwitchBtn('forth_frame', 3);
-            hideAllFrame();
-            if (isForthOpen) {
-                showframe('forth_frame');
-            }
-            else {
-                openframeinstance('forth_frame', firstHeaderOffset.h, false);
-                isForthOpen = true;
-            }
-
-            // showgroup('forth_frame');
-            break;
-        default:
-            break;
-    }
-
-}
-
-// 完成首页初始化
-apiready = function() {
-    // 设置ios7的标题栏字体变亮，全局用一个就行了
-    api.setStatusBarStyle({
-        style: 'dark'
-    });
-
-    firstHeader = $api.byId('firstHeader');
-    secHeader = $api.byId('secHeader');
-    thirdHeader = $api.byId('thridHeader');
-    fortheader = $api.byId('fortheader');
-
-    var fortheader = $api.byId('fortheader');
-    var firstHeaderIndex = $api.byId('firstHeaderIndex');
-
-    $api.fixStatusBar( $api.dom( '.titlebar.activebar .topbar') );
-
-    // TODO 一定记得修改
-    firstHeaderOffset = $api.offset(firstHeader);
-    firstHeaderIndexHeight = $api.offset(firstHeaderIndex).h;
-
-    firstHeaderOffset.h -= firstHeaderIndexHeight;
-
-    var main = $api.byId('main');
-    var mainPos = $api.offset(main);
-
-    var footer = $api.byId('footer');
-    var footerPos = $api.offset(footer);
-
-    // 第一次进入打开 first_frame body
-    // api.openFrame ({
-    //     name: 'first_frame',
-    //     url: './html/first_frame/first_frame_body.html',
-    //     rect:{
-    //         x:0,
-    //         y:firstHeaderOffset.h,
-    //         w:'auto',
-    //         h:api.frameHeight-firstHeaderOffset.h -footerPos.h
-    //     },
-    //     pageParam: {name: firstHeaderOffset.h + footerPos.h},
-    //     bounces:false,
-    //     vScrollBarEnabled:false,
-    //     hScrollBarEnabled:false
-    // });
-    var scrollHeight = $api.dom('.navbar').offsetHeight;
-    $api.byId('navmark').style.width = api.winWidth / 4 + 'px';
-    isFirstOpen = true;
-    openFirstFramegroup();
-
-};
+/* ]]> */
 </script>
+<script type="text/javascript" src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/cache/scripts/978e0a5f457afdf1eab40dcec2ae481c.js">/*Cache!*/</script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-includes/wlwmanifest.xml" />
+
+<link rel="canonical" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/" />
+<link rel="shortlink" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=2160" />
+<style class="style_0" >.bitRightSider .widget-title,.bitLeftSider .widget-title{padding:0 0 0 10px;height:28px;line-height:28px;background-color:#024886;margin:0px;font-family:;font-size:px;font-weight:normal;font-style:normal;text-decoration:none;color:#fff;border-top:0;border-left:0;border-right:0;border-bottom:0;background-image: url(//fast.qifeiye.com/qfy-content/plugins//bit-plugin/assets/frame/header_bg/1/bg.png);background-repeat: repeat;-webkit-border-top-left-radius: 0;-webkit-border-top-right-radius: 0;-moz-border-radius-topleft: 0;-moz-border-radius-topright: 0;border-top-left-radius: 0;border-top-right-radius: 0;} .bitRightSider .bitWidgetFrame,.bitLeftSider .bitWidgetFrame{border-top:0;border-bottom:1px solid #bababa;border-left:1px solid #bababa;border-right:1px solid #bababa;padding:4px 10px 4px 10px;-webkit-border-bottom-left-radius: 0;-webkit-border-bottom-right-radius: 0;-moz-border-radius-bottomleft: 0;-moz-border-radius-bottomright: 0;border-bottom-left-radius: 0;border-bottom-right-radius: 0;}.bitRightSider .site_tooler,.bitLeftSider .site_tooler{-webkit-box-shadow:none;box-shadow:none;}.bitRightLeftSiderWidget.site_tooler .bitWidgetFrame,.bitRightLeftSiderWidget.site_tooler .bitWidgetFrame{background-color:transparent;background-image:none;-webkit-border-bottom-left-radius: 0px;border-bottom-left-radius: 0px;-webkit-border-bottom-right-radius: 0px;border-bottom-right-radius: 0px;}</style><style class= "style_0" >.footer .widget-title{padding:0 0 0 10px;height:28px;line-height:28px;background-color:transparent;margin:0px;font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;border-top:0;border-left:0;border-right:0;border-bottom:0;background-image:none;-webkit-border-top-left-radius: 4px;-webkit-border-top-right-radius: 4px;-moz-border-radius-topleft: 4px;-moz-border-radius-topright: 4px;border-top-left-radius: 4px;border-top-right-radius: 4px;} .footer .widget-title{border-top:0;border-left:0;border-right:0;} .footer  .bitWidgetFrame{border-bottom:0;border-top:0;border-left:0;border-right:0;padding:4px 10px 4px 10px;}.footer .site_tooler{-webkit-box-shadow:none;box-shadow:none;}.footer .site_tooler .bitWidgetFrame{background-color:transparent;background-image:none;background-repeat: repeat;-webkit-border-bottom-left-radius: 4px;border-bottom-left-radius: 4px;-webkit-border-bottom-right-radius: 4px;border-bottom-right-radius: 4px;}</style><link rel="icon" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/10/6d41298c4657bcad57cb7b6c3f742e8d.png" type="image/png"/>
+<link rel="apple-touch-icon-precomposed" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/10/6d41298c4657bcad57cb7b6c3f742e8d.png" />
+<link rel="apple-touch-icon" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/10/6d41298c4657bcad57cb7b6c3f742e8d.png" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="首页" />
+		<style type="text/css" >
+</style>
+		<script type="text/javascript">
+			dtGlobals.logoEnabled = 1;dtGlobals.curr_id = 2160;dtGlobals.logoURL = '';dtGlobals.logoW = '0';dtGlobals.logoH = '0';dtGlobals.qfyname = '起飞页';dtGlobals.id = '5a68628c698d2';dtGlobals.language = '';smartMenu = 0;document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';
+			dtGlobals.gallery_bgcolor = 'rgba(51,51,51,1)';dtGlobals.gallery_showthumbs = '0';dtGlobals.gallery_style = '';dtGlobals.gallery_autoplay = '0';dtGlobals.gallery_playspeed = '3';dtGlobals.gallery_imagesize = '100';dtGlobals.gallery_stopbutton = '';dtGlobals.gallery_thumbsposition = '';dtGlobals.gallery_tcolor = '#fff';dtGlobals.gallery_tsize = '16';dtGlobals.gallery_dcolor = '#fff';dtGlobals.gallery_dsize = '14';dtGlobals.gallery_tfamily = '';dtGlobals.gallery_dfamily = '';dtGlobals.gallery_blankclose = '0';dtGlobals.fm_showstyle = '';dtGlobals.fm_showspeed = '';dtGlobals.cdn_url = 'http://static2.hk.qifeiye.com';dtGlobals.qfymodel = "1";
+			            			var socail_back_url = '';
+
+		</script>
+
+
+
+</head>
+
+
+<body  class="home page page-id-2160 page-template-default logged-in image-blur menunopadding free_public btn-flat qfe-js-composer js-comp-ver-4.0.1 vc_responsive"  data-pid="2160" data-pkey="43696bcdc4f8022776101003c5671fe2">
+
+<div   id="page"  class="topbarPaddingandmarginOff breackall wide">
+
+
+
+	<!-- left, center, classical, classic-centered -->
+	<!-- !Header -->
+	<header id="header" class="logo-classic  mobiletopbottom headerInnerPM menuPositionHolder" role="banner" >
+
+		<div class="wf-wrap">
+			<div class="wf-table">
+
+
+
+<div id="branding" class="wf-td bit-logo-bar" style="background-color:transparent;margin-left:1px;" >
+	<a  class="bitem logo small" style="display: table-cell;" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/"><span class="logospan"><img class="preload-me wf-mobile-hidden" src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/10/6d41298c4657bcad57cb7b6c3f742e8d.png" width="177" height="178"   alt="卡尔西然官方网站设计"  /><img src="e49ae85a1c20f2807434b64052a6ae0c-260x300" alt="" class="preload-me"></span></a>
+
+	<!-- <div id="site-title" class="assistive-text"></div>
+	<div id="site-description" class="assistive-text"></div> -->
+</div>
+
+					<div class="wf-td assistive-info  align  " role="complementary" style="" >
+					  <div style="display:inline-block;" class="top-bar-right right bit_widget_more" bitdatamarker="bitHeader-2" bitdataaction="site_fix_container" bitdatacolor="white"  >
+                          <div id="text-25"  style="margin-top:0;margin-bottom:0;" class="mobileHidden headerWidget_1 widget_text site_tooler">
+			<div class="textwidget ckeditorInLine bitWidgetFrame" bitRlt="text" bitKey="text" wid="text-25" >
+			<div><span style="font-size:18px;"><span style="font-family: georgia;"><span style="color: rgb(0, 0, 0);"><img alt="" height="30" src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/4c2c4219477c5877bac946a656a31445.png?attachment_id=8838" style="vertical-align: middle;" title="" width="30">&nbsp;18861511017</span></span></span></div>
+</div>
+			</div><div id="text-24"  style="margin-top:0;margin-bottom:0;" class="mobileHidden headerWidget_1 widget_text site_tooler">
+			<div class="textwidget ckeditorInLine bitWidgetFrame" bitRlt="text" bitKey="text" wid="text-24" >
+			<div><a class="bitIcon iconLeft" data-original-image="" data-original-imageheight="" data-original-imagewidth="" data-original-title="" data-tooltip="off" data-url-flag="0" data-url-flagtarget="" target="_blank" url-flag="0" url-flagtarget="">
+<b style="color: rgb(0, 0, 0); border: 0px none; font-size: 21px; border-radius: 0px;">
+<i class="glyphicon glyphicon-icon-twitter" style="margin: 2px 6px; top: 0px;"> <span style="display: none; width: 0px;">&nbsp;</span> </i>
+</b>
+<span class="iconText" style="font-size: 14px;"></span></a>&nbsp; <a class="bitIcon iconLeft" data-original-image="" data-original-imageheight="" data-original-imagewidth="" data-original-title="" data-tooltip="off" data-url-flag="0" data-url-flagtarget="" target="_blank" url-flag="0" url-flagtarget="">
+<b style="color: rgb(0, 0, 0); border: 0px none; font-size: 21px; border-radius: 0px;">
+<i class="glyphicon glyphicon-icon-facebook" style="margin: 2px 6px; top: 0px;"> <span style="display: none; width: 0px;">&nbsp;</span> </i>
+</b>
+<span class="iconText" style="font-size: 14px;"></span></a> &nbsp;</div>
+</div>
+			</div>                        </div>
+					</div>
+
+
+			</div><!-- .wf-table -->
+		</div><!-- .wf-wrap -->
+		<div class="navigation-holder">
+			<div>
+
+
+		<!-- !- Navigation -->
+		<nav style="0" id="navigation" class="wf-wrap"   bitDataAction="site_menu_container" bitDataLocation="primary" >
+			<ul id="main-nav" data-st="0" data-sp="0"  data-fh="" data-mw="" data-lh="" class="mainmenu fancy-rollovers wf-mobile-hidden bit-menu-default position-text-right"      data-bit-menu=bit-menu-default data-bit-float-menu=underline-hover ><li class=" menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2160 current_page_item bit-menu-post-id-2160 menu-item-2319 act first"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/"><span>首页</span></a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page bit-menu-post-id-5990 menu-item-5991"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=5990"><span>关于我们</span></a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page bit-menu-post-id-6394 menu-item-9031"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394"><span>品牌服饰</span></a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page bit-menu-post-id-2255 menu-item-9030"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=2255"><span>火爆热销</span></a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page bit-menu-post-id-6072 menu-item-6073"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6072"><span>联系我们</span></a></li>
+</ul>
+
+			<a  data-padding="" data-top="8"data-right="8" rel="nofollow" id="mobile-menu" style="display:none;" class="glyphicon glyphicon-icon-align-justify dropCenterStyle positionFixed center" >
+				<span class="menu-open  phone-text">卡尔西然</span>
+				<span class="menu-close">关闭</span>
+				<span class="menu-back">返回上一级</span>
+				<span class="wf-phone-visible">&nbsp;</span>
+
+			</a>
+
+					</nav>
+		<div style="display:none;" id="main-nav-slide">
+									<div class="main-nav-slide-inner" data-class="" >
+				<div  class="floatmenu-bar-right bit_widget_more" bitdatamarker="bitHeader-3" bitdataaction="site_fix_container" bitdatacolor="white">
+					 				</div>
+			</div>
+		</div>
+
+
+			</div>
+		</div><!-- .navigation-holder -->
+	</header><!-- #masthead -->
+
+ <section class="bitBanner" id="bitBanner" bitdatamarker="bitBanner" bitdataaction="site_fix_container" >
+	<div id="rev-slider-widget-2" style="" class="bitImageControlDiv bitBanner widget_revslider site_tooler"><!-- START REVOLUTION SLIDER 4.1.4 fullwidth mode -->
+			<style type='text/css' id="bit_revsider_style">
+								@media screen and (min-width: 768px) {#rev_slider_3_1_wrapper{
+                           height:1500px;
+				  } }
+												@media screen and (max-width: 768px) {#rev_slider_3_1_wrapper .tp-bullets{display:none !important;}#rev_slider_3_1_wrapper .tparrows{display:none !important;}}							</style>
+		<script type='text/javascript' src='/qfy-content/plugins/revslider/rs-plugin/js/jquery.themepunch.plugins.min.js?rev=4.1.4'></script><script type='text/javascript' src='/qfy-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?rev=4.1.4'></script>
+<div id="rev_slider_3_1_wrapper" bitDataAction="site_slider_container"  bitDataLocation="3" biDataNonce="f26b7896e9" class="rev_slider_wrapper   fullwidthbanner-container" style="margin:0px auto;background-color:#e9e9e9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:1500px;">
+	<div id="rev_slider_3_1" class="rev_slider fullwidthabanner" style="display:none;max-height:1500px;height:1500;">
+<ul data-height="1500" data-mobileheight="400">	<!-- SLIDE  -->
+	<li class="bitSliderLi" data-slideId="14" data-transition="slidehorizontal" data-slotamount="7" data-masterspeed="600" >
+		<!-- MAIN IMAGE -->
+		<img src="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/04af0d54e7e3926d1cd6363fd25c0483.jpg"  alt="04af0d54e7e3926d1cd6363fd25c0483"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div data-width='1920' data-height='1500'  data-pt='0' data-pb='0' data-pl='0' data-pr='0' data-device="1" dataBordersShow="0" dataBorders="" dataTop="-70" dataLeft="0" dataAlignVert="middle" dataAlignHor="center" dataStyle=""  dataAnimation="sfb" dataEndAnimation="tp-fade" bitSlidetextIndex="1" class="tp-caption sfb tp-fade tp-resizeme wf-mobile-hidden"
+			data-x="center" data-hoffset="0"
+			data-y="center" data-voffset="-70"
+			data-speed="2000"
+			bgcolor="transparent"
+			bgcolor_opt="1"
+			data-start=""
+			data-easing="Power3.easeInOut"
+			data-endspeed="300"
+			style="position:absolute; opacity: 0;background-color:transparent;text-decoration:none;z-index: 2"><div style="text-align: center;"><span style="display:inline-block;line-height:1.6;"><strong><span style="letter-spacing:3px;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 255, 255); font-size: 40px;">今冬新款</span></span></span></strong></span><br></div><div style="text-align: center;"><span style="display:inline-block;line-height:1.6;"><strong><span style="letter-spacing:3px;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 255, 255); font-size: 40px;">​</span></span></span></strong></span><span style="color: rgb(255, 255, 255); font-size: 22px; font-family: arial; background-color: transparent; text-indent: 0em; word-spacing: normal;">&nbsp;NEW STYLE</span></div><div style="text-align: center;"><span style="display:inline-block;line-height:1.2;">&nbsp;</span></div><div style="text-align: center;"><span style="font-size:20px;"><span style="display: inline-block; line-height: 1.2;"><span style="color: rgb(255, 255, 255);"><span style="min-height: 0px; min-width: 0px; white-space: nowrap; border-width: 0px; margin: 0px; padding: 0px;"><span style="min-height: 0px; min-width: 0px; white-space: nowrap; border-width: 0px; margin: 0px; padding: 0px;"><span style="font-family: 微软雅黑; min-height: 0px; min-width: 0px; white-space: nowrap; border-width: 0px; margin: 0px; padding: 0px;">双击可以修改文字，还可以点击编辑按钮修改内容</span></span></span></span></span></span></div>
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div data-width='1920' data-height='1500'  data-pt='0' data-pb='0' data-pl='0' data-pr='0' data-device="1" dataBordersShow="0" dataBorders="" dataTop="160" dataLeft="0" dataAlignVert="middle" dataAlignHor="center" dataStyle=""  dataAnimation="sfb" dataEndAnimation="tp-fade" bitSlidetextIndex="2" class="tp-caption sfb tp-fade tp-resizeme wf-mobile-hidden"
+			data-x="center" data-hoffset="0"
+			data-y="center" data-voffset="160"
+			data-speed="2000"
+			bgcolor="transparent"
+			bgcolor_opt="1"
+			data-start="1000"
+			data-easing="Power3.easeInOut"
+			data-endspeed="300"
+			style="position:absolute; opacity: 0;background-color:transparent;text-decoration:none;z-index: 3"><div><span tabindex="-1" data-cke-widget-wrapper="1" data-cke-filter="off" class="cke_widget_wrapper cke_widget_inline cke_widget_focused cke_widget_selected" data-cke-display-name="a" data-cke-widget-id="0" contenteditable="false"><a class="bitButton borderColor cke_widget_element iconLeft" borderhovercolor="rgb(255, 255, 255)" bordercolor="rgb(255, 255, 255)" textcolor="rgb(255, 255, 255)" texthovercolor="#333333" iconcolor="#ffffff" iconhovercolor="#ffffff" backgroundcolor="transparent" backgroundhovercolor="rgb(255, 255, 255)" style="border-radius: 5px; box-shadow: none; border: 1px solid rgb(255, 255, 255); padding: 11px 74px; background: transparent none repeat scroll 0% 0%; line-height: 20px;" data-cke-widget-data="{&quot;classes&quot;:{&quot;iconLeft&quot;:1,&quot;borderColor&quot;:1,&quot;bitButton&quot;:1}}" data-cke-widget-upcasted="1" data-cke-widget-keep-attr="0" data-widget="bitBlockButtonElement" begincolor="transparent" data-begincolor="transparent" data-borderhovercolor="rgb(255, 255, 255)" data-bordercolor="rgb(255, 255, 255)" data-backgroundhovercolor="rgb(255, 255, 255)" data-backgroundcolor="transparent" data-iconcolor="#ffffff" data-iconhovercolor="#ffffff" data-textcolor="rgb(255, 255, 255)" hovercolor="rgb(255, 255, 255)" data-hovercolor="rgb(255, 255, 255)" data-texthovercolor="#333333" url-flagtarget="" url-flag="0" data-url-flagtarget="" data-url-flag="0" cke-widget-data="{&quot;classes&quot;:{&quot;iconLeft&quot;:1,&quot;borderColor&quot;:1,&quot;bitButton&quot;:1}}" cke-widget-upcasted="1" cke-widget-keep-attr="0" widget="bitBlockButtonElement"><b style="display: none;"><i class="glyphicon glyphicon-star" style="color: rgb(255, 255, 255);"> <span style="display: none; width: 0px;">&nbsp;</span> </i></b><span class="iconText" style="font-family: 微软雅黑; color: rgb(255, 255, 255); font-size: 19px;">点击按钮</span></a></span><br></div><div data-cke-hidden-sel="1" data-cke-temp="1" style="position:fixed;top:0;left:-1000px"><br></div><div data-cke-hidden-sel="1" data-cke-temp="1" style="position:fixed;top:0;left:-1000px">&nbsp;</div>
+		</div>
+	</li>
+</ul>
+	</div>
+</div>
+			<script type="text/javascript" id="bit_revsider">
+			var revapi3_param ={
+							hideTimerBar:"on",
+							simplifyAll:"on",
+							dottedOverlay:"ershiwublack",
+							delay:5000,
+							startwidth:1920,
+							startheight:1500,
+							hideThumbs:200,
+
+							thumbWidth:100,
+							thumbHeight:50,
+							thumbAmount:1,
+
+							navigationType:"bullet",
+							navigationArrows:"solo",
+							navigationStyle:"round",
+														touchenabled:"on",
+														onHoverStop:"on",
+
+							navigationHAlign:"center",
+							navigationVAlign:"bottom",
+							navigationHOffset:0,
+							navigationVOffset:20,
+
+							soloArrowLeftHalign:"left",
+							soloArrowLeftValign:"center",
+							soloArrowLeftHOffset:20,
+							soloArrowLeftVOffset:0,
+
+							soloArrowRightHalign:"right",
+							soloArrowRightValign:"center",
+							soloArrowRightHOffset:20,
+							soloArrowRightVOffset:0,
+
+							navigation_arrows_style:'default',
+
+							shadow:0,
+							fullWidth:"on",
+							fullScreen:"off",
+
+							stopLoop:"off",
+							stopAfterLoops:-1,
+							stopAtSlide:-1,
+
+
+							shuffle:"off",
+
+							autoHeight:"on",
+							forceFullWidth:"off",
+
+
+							hideThumbsOnMobile:"off",
+							hideBulletsOnMobile:"off",
+							hideArrowsOnMobile:"off",
+							hideThumbsUnderResolution:0,
+
+							hideSliderAtLimit:0,
+							hideCaptionAtLimit:0,
+							hideAllCaptionAtLilmit:0,
+							startWithSlide:0,
+							videoJsPath:"http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/plugins/revslider/rs-plugin/videojs/",
+							fullScreenOffsetContainer: ""
+						}
+			</script>
+			<script type="text/javascript" >
+
+				var tpj=jQuery;
+				tpj.noConflict();
+				var revapi3;
+
+				function run_revApi(){
+					if(tpj('#rev_slider_3_1').revolution == undefined)
+						revslider_showDoubleJqueryError('#rev_slider_3_1');
+					else{
+
+					   revapi3 = tpj('#rev_slider_3_1').show().revolution(revapi3_param);
+					}
+				}
+				tpj(document).ready(function() {
+					if("off"=="on" && top!=self){
+						setTimeout("run_revApi()",300);
+					}else{
+						run_revApi();
+					}
+
+				});	//ready
+
+			</script>
+
+			<!-- END REVOLUTION SLIDER --></div></section>
+<div id="main" class="bit_main_content">
+
+
+		<div class="main-gradient"></div>
+
+		<div class="wf-wrap">
+			<div class="wf-container-main">
+
+
+
+
+
+			<div id="content" class="content" role="main">
+
+								<div class="main-outer-wrapper ">
+		<div class="bit_row">
+
+				<div class="page-wrapper twelve columns left-sidebar ">
+                    <div class="bit_row">
+						<section class="left-sidebar-wrapper three mobileHidden wf-mobile-hidden columns " >
+							<div class="bitLeftSider qfe_row" bitDataAction="site_widget_container" bitdatamarker="bitLeftSider" style="">
+                            <div id="bit_postlist-2"  style="margin-top:0;margin-bottom:0;" class="mobileHidden bitRightLeftSiderWidget widget_text site_tooler"><div id=""   data-loading="" data-loading-w=""  data-open="" data-post="post" data-cate=" "   m-padding="0px 0px 0px 0px"  p-padding="   " css_animation_delay="0" qfyuuid="0"   class="qfy-element  UUID-POSTS-5a689786e0bac640029 qfe_teaser_grid qfe_content_element  qfe_grid columns_count_2 columns_count_2 qfe_teaser_grid_post  " style="margin-top:;margin-bottom:;padding-top:;padding-bottom:;padding-right:;padding-left:;border-radius:0px;">
+<style>.UUID-POSTS-5a689786e0bac640029 li:hover .subtitle{color:#cccccc !important;}.UUID-POSTS-5a689786e0bac640029 li:hover .vc_read_more{}@media only screen and (max-width: 992px) {.UUID-POSTS-5a689786e0bac640029  .post_blog .blog-media{width:100% !important;}}.UUID-POSTS-5a689786e0bac640029 .qfy_item_post .price_warp .amount,.UUID-POSTS-5a689786e0bac640029 .qfy_item_post .price_warp del{color:#cccccc;font-size:12px;}.UUID-POSTS-5a689786e0bac640029 .qfy_item_post .price_warp ins .amount{color:#cccccc;font-size:12px;}.UUID-POSTS-5a689786e0bac640029 .qfy_item_post .price_warp {padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;}.UUID-POSTS-5a689786e0bac640029 .qfy_item_post:hover .price_warp .amount,.UUID-POSTS-5a689786e0bac640029 .qfy_item_post:hover .price_warp del{color:#cccccc !important;}.UUID-POSTS-5a689786e0bac640029 .qfy_item_post:hover .price_warp ins .amount{color:#cccccc !important;}.UUID-POSTS-5a689786e0bac640029 li:hover *{transition: all .6s ease;}.UUID-POSTS-5a689786e0bac640029 li *{transition: all .6s ease;}</style>	<style class='style_UUID-POSTS-5a689786e0bac640029'>.UUID-POSTS-5a689786e0bac640029 .qfe_heading{padding:0 0 0 10px;height:28px;line-height:28px;background-color:undefined;margin:0px;font-family:微软雅黑;font-size:20px;font-weight:normal;font-style:normal;text-decoration:none;color:#424240;border-top:1px solid #ffffff;border-left:1px solid #ffffff;border-right:1px solid #ffffff;border-bottom:0px solid #ffffff;background-image:none;-webkit-border-top-left-radius: 4px;-webkit-border-top-right-radius: 4px;-moz-border-radius-topleft: 4px;-moz-border-radius-topright: 4px;border-top-left-radius: 4px;border-top-right-radius: 4px;} .UUID-POSTS-5a689786e0bac640029 .qfe_heading{border-top:0;border-left:0;border-right:0;} .UUID-POSTS-5a689786e0bac640029  .teaser_grid_container,.UUID-POSTS-5a689786e0bac640029 .vc-carousel{border-bottom:0;border-top:0;border-left:0;border-right:0;padding:10px 10px 4px 10px;}.UUID-POSTS-5a689786e0bac640029{-webkit-box-shadow:none;box-shadow:none;}.post-title .glyphicon{  left:0px;  }  #UUID-POSTS-5a689786e0bac640029 .bitWidgetFrame{background-color:#ffffff;background-image:none;background-repeat: repeat;-webkit-border-bottom-left-radius: 4px;border-bottom-left-radius: 4px;-webkit-border-bottom-right-radius: 4px;border-bottom-right-radius: 4px;}</style>    <div class="qfe_wrapper">
+        <h2 class="qfe_heading qfe_teaser_grid_heading vc_span12"    >更多服装 <a class='morelink' style='float:right;margin-right:10px;font-size:12px;color:#ffffff'   href='http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com?page_id=6815&categories= ' >更多新闻</a></h2>        <div class="teaser_grid_container noanimale" style='background-color:#ffffff;background-repeat: repeat;;clear:both;' data-type="post"  data-cate=" " data-pcate="">
+                        <ul style="min-height:60px;" class="qfe_thumbnails qfe_thumbnails-fluid vc_clearfix post_grid " data-layout-mode="fitRows" >
+                                                                                <li data-postid="7791" data-animaleinbegin="bottom-in-view"  data-animalename="qfyfadeInUp" data-delay="0" data-duration=""   class=" isotope-item qfy_item_post vc_span6 grid-cat-2 " style='max-width:49.9%;margin-bottom:5px;padding-bottom:5px;' >
+									<div class='itembody' style="">
+
+
+
+				<div class="post-thumb blog-media wf-td" style='overflow:hidden;display:block;width: 100%;text-align: center;padding-bottom:10px;vertical-align:top;' >
+		<a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7791" class="bitImageAhover   link_image" title="长袖印花中长款加厚连帽拉链羽绒服"><img data-t-id='6929' style='' class=" ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8xMi9UQjJLR21RYVZYWFhYYzVYWFhYWFhYWFhYWFhfMTU3OTg4MDczNC0xMDB4MTAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg" alt="TB2KGmQaVXXXXc5XXXXXXXXXXXX_!!1579880734" description=""    data-title="TB2KGmQaVXXXXc5XXXXXXXXXXXX_!!1579880734" title="" src-img ="" /><i></i></a>	</div>
+
+
+
+		<div class="post-title"  style='color:#373A41;line-height:12px; vertical-align: top; text-align:center; '>
+
+	<a data-title="true" style="color:#373A41;font-size:12px;line-height:18px" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7791" class="bitImageAhover   link_title" title="长袖印花中长款加厚连帽拉链羽绒服">长袖印花中长款加厚连帽拉链羽绒服</a>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+							                    					</div>
+				                </li>                                                 <li data-postid="7789" data-animaleinbegin="bottom-in-view"  data-animalename="qfyfadeInUp" data-delay="0" data-duration=""   class=" isotope-item qfy_item_post vc_span6 grid-cat-2 " style='max-width:49.9%;margin-bottom:5px;padding-bottom:5px;' >
+									<div class='itembody' style="">
+
+
+
+				<div class="post-thumb blog-media wf-td" style='overflow:hidden;display:block;width: 100%;text-align: center;padding-bottom:10px;vertical-align:top;' >
+		<a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7789" class="bitImageAhover   link_image" title="欧美女装春装新款时尚宽条纹图案连衣裙"><img data-t-id='7018' style='' class=" ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8xMi9UQjJzTHk0YnBYWFhYYURYWFhYWFhYWFhYWFhfMjExOTczNTk0MC0xMDB4MTAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg" alt="TB2sLy4bpXXXXaDXXXXXXXXXXXX_!!2119735940" description=""    data-title="TB2sLy4bpXXXXaDXXXXXXXXXXXX_!!2119735940" title="" src-img ="" /><i></i></a>	</div>
+
+
+
+		<div class="post-title"  style='color:#373A41;line-height:12px; vertical-align: top; text-align:center; '>
+
+	<a data-title="true" style="color:#373A41;font-size:12px;line-height:18px" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7789" class="bitImageAhover   link_title" title="欧美女装春装新款时尚宽条纹图案连衣裙">欧美女装春装新款时尚宽条纹图案连衣裙</a>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+							                    					</div>
+				                </li> <div class="wf-mobile-hidden" style="clear:both"></div>                                                <li data-postid="7785" data-animaleinbegin="bottom-in-view"  data-animalename="qfyfadeInUp" data-delay="0" data-duration=""   class=" isotope-item qfy_item_post vc_span6 grid-cat-2 " style='max-width:49.9%;margin-bottom:5px;padding-bottom:5px;' >
+									<div class='itembody' style="">
+
+
+
+				<div class="post-thumb blog-media wf-td" style='overflow:hidden;display:block;width: 100%;text-align: center;padding-bottom:10px;vertical-align:top;' >
+		<a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7785" class="bitImageAhover   link_image" title="新款獭兔毛领羽绒服 女 加长加厚修身款冬装外套"><img data-t-id='7063' style='' class=" ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8xMi9UQjJLZTlRYnBYWFhYWEZYcFhYWFhYWFhYWFhfMjExOTczNTk0MC0xMDB4MTAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg" alt="TB2Ke9QbpXXXXXFXpXXXXXXXXXX_!!2119735940" description=""    data-title="TB2Ke9QbpXXXXXFXpXXXXXXXXXX_!!2119735940" title="" src-img ="" /><i></i></a>	</div>
+
+
+
+		<div class="post-title"  style='color:#373A41;line-height:12px; vertical-align: top; text-align:center; '>
+
+	<a data-title="true" style="color:#373A41;font-size:12px;line-height:18px" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7785" class="bitImageAhover   link_title" title="新款獭兔毛领羽绒服 女 加长加厚修身款冬装外套">新款獭兔毛领羽绒服 女 加长加厚修身款冬装外套</a>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+							                    					</div>
+				                </li>                                                 <li data-postid="7778" data-animaleinbegin="bottom-in-view"  data-animalename="qfyfadeInUp" data-delay="0" data-duration=""   class=" isotope-item qfy_item_post vc_span6 grid-cat-2 " style='max-width:49.9%;margin-bottom:5px;padding-bottom:5px;' >
+									<div class='itembody' style="">
+
+
+
+				<div class="post-thumb blog-media wf-td" style='overflow:hidden;display:block;width: 100%;text-align: center;padding-bottom:10px;vertical-align:top;' >
+		<a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7778" class="bitImageAhover   link_image" title="长袖印花中长款加厚连帽拉链羽绒服"><img data-t-id="7039" style='' class=" ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8xMi9UQjIybHV6YVZYWFhYYWlYWFhYWFhYWFhYWFhfMTU3OTg4MDczNC0xMDB4MTAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg" alt="TB22luzaVXXXXaiXXXXXXXXXXXX_!!1579880734" description=""    data-title="TB22luzaVXXXXaiXXXXXXXXXXXX_!!1579880734" title="" src-img ="" /><i></i></a>	</div>
+
+
+
+		<div class="post-title"  style= " color:#373A41;line-height:12px; vertical-align: top; text-align:center;">
+
+	<a data-title="true" style="color:#373A41;font-size:12px;line-height:18px" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7778" class="bitImageAhover   link_title" title="长袖印花中长款加厚连帽拉链羽绒服">长袖印花中长款加厚连帽拉链羽绒服</a>
+
+	</div>
+
+							                    					</div>
+				                </li> <div class="wf-mobile-hidden" style="clear:both"></div>                                                <li data-postid="7015" data-animaleinbegin="bottom-in-view"  data-animalename="qfyfadeInUp" data-delay="0" data-duration=""   class=" isotope-item qfy_item_post vc_span6 grid-cat-2 " style='max-width:49.9%;margin-bottom:5px;padding-bottom:5px;' >
+									<div class='itembody' style="">
+
+
+
+				<div class="post-thumb blog-media wf-td" style='overflow:hidden;display:block;width: 100%;text-align: center;padding-bottom:10px;vertical-align:top;' >
+		<a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7015" class="bitImageAhover   link_image" title="欧美女装春装新款时尚宽条纹图案连衣裙"><img data-t-id='6936' style='' class=" ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8xMi9UQjJXRFBDYVZYWFhYYm9YcFhYWFhYWFhYWFhfMjExOTczNTk0MC0xMDB4MTAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg" alt="TB2WDPCaVXXXXboXpXXXXXXXXXX_!!2119735940" description=""    data-title="TB2WDPCaVXXXXboXpXXXXXXXXXX_!!2119735940" title="" src-img ="" /><i></i></a>	</div>
+
+
+
+		<div class="post-title"  style='color:#373A41;line-height:12px; vertical-align: top; text-align:center; '>
+
+	<a data-title="true" style="color:#373A41;font-size:12px;line-height:18px" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?p=7015" class="bitImageAhover   link_title" title="欧美女装春装新款时尚宽条纹图案连衣裙">欧美女装春装新款时尚宽条纹图案连衣裙</a>
+
+	</div>
+
+	</div>
+		  </li>
+            </ul>
+        </div>
+    </div>     <div class="clear"></div>
+
+
+
+</div>
+</div>                            <div class="clear"></div>
+							</div>
+						</section>
+						<section class="content-wrapper nine columns left-sidebar-content">
+                             <section  data-fixheight="" class="qfy-row-1-5a689786e7b97257778 section    full   section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_gt38d"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-1-5a689786e7b97257778{padding-left:0;padding-right:0;padding-top:20px;padding-bottom:0;margin-top:0;}section.section.qfy-row-1-5a689786e7b97257778 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-1-5a689786e7b97257778{padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:0;margin-top:0;min-height:70px;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-1-5a689786e7fae429107 qfy-column-inner  vc_span12  text-default small-screen-undefined fullrow"  data-dw="1/1" data-fixheight="" ><div style=";position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-" style="background-color:transparent;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div id="vc_header_5a689786e8333760"  m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_header_nkgc1"  class="qfy-element minheigh1px qfe_text_column qfe_content_element " style="position: relative;;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;"><style>@media only screen and (max-width: 760px) {#vc_header_5a689786e8333760 .header_title{font-size:20px !important;}}@media only screen and (max-width: 760px) {#vc_header_5a689786e8333760 .header_subtitle{font-size:14px !important;}}</style>
+		<div class="qfe_wrapper">
+			<H1 class="qfy_title center mobilecenter"><div class="qfy_title_inner" style="display:inline-block;position:relative;max-width:100%;"><span class="line-abs " style="overflow:hidden;border-bottom-style:solid;width:530px;max-width:530px;border-bottom-width:1px;border-bottom-color:#dddddd;margin-right:20px;" ></span><div class="header_title" style="font-family:微軟正黑體;font-size:30px;font-weight:bold;font-style:normal;color:#ff6699;">品牌最新发布</div><span class="line-abs right" style="overflow:hidden;border-bottom-style:solid;width:530px;max-width:530px;border-bottom-width:1px;border-bottom-color:#dddddd;margin-left:20px;"  ></span></div><style></style><div class="button_wrapper" style="display:none;"><div class="button " style="display:inline-block;max-width:100%;text-align:center; font-size:12px;"></div></div><span  style="clear:both;"></span></H1>
+		</div>
+	</div>
+	<div  m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_column_text_se2nc"  class="qfy-element qfy-text qfy-text-4225 qfe_text_column qfe_content_element  mobile_fontsize" style="position: relative;;;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><span style="color:#000000;"><span style="font-size: 15px;"><span style="font-family: lucida sans unicode;"><span style="font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.8); display: inline ! important; float: none;">THE LATEST RELEASE</span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-1-5a689786e7fae429107 > .column_inner {padding-left:0;padding-right:0;padding-top:45px;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-1-5a689786e7fae429107 {};}@media only screen and (max-width: 992px){.qfy-column-1-5a689786e7fae429107 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-1-5a689786e7fae429107 {}.qfy-column-1-5a689786e7fae429107 > .column_inner> .background-overlay,.qfy-column-1-5a689786e7fae429107 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-2-5a689786e8b13945977 section     no  section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_61gip"  style='margin-bottom:0;border-radius:0px;color:#000000;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-2-5a689786e8b13945977{padding-left:0;padding-right:0;padding-top:150px;padding-bottom:144px;margin-top:0;}section.section.qfy-row-2-5a689786e8b13945977 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-2-5a689786e8b13945977{padding-left:0;padding-right:15px;padding-top:139px;padding-bottom:120px;margin-top:0;}}
+	</style>
+            <div data-time="4" data-imagebgs="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/212a95f1a6263cd8355e831b1a770319.jpg|^|http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/d83a2c94c496c616dc51eae17531618b.jpg" class="background-media mediagallery " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/d83a2c94c496c616dc51eae17531618b.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position:center top;">
+                    </div>
+
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: rgba(255,191,210,0.1);"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInRight"  data-duration="1.5" data-delay=""  class="qfyanimate qfy-column-2-5a689786e8edc975816 qfy-column-inner  vc_span12  text-center small-screen-center column_middle fullrow"  data-dw="1/1" data-fixheight="" ><div style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;border-radius:0px;;position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-0" style="background-color:rgba(1,25,4,0.3);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div id="vc_header_5a689786e9204583"  m-padding="2px 0px 0px 0px"  p-padding="71px 0 0 0" css_animation_delay="0" qfyuuid="qfy_header_nkgc1"  class="qfy-element minheigh1px qfe_text_column qfe_content_element " style="position: relative;;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:71px;padding-bottom:0;padding-right:0;padding-left:0;"><style>@media only screen and (max-width: 760px) {#vc_header_5a689786e9204583 .header_title{font-size:20px !important;}}@media only screen and (max-width: 760px) {#vc_header_5a689786e9204583 .header_subtitle{font-size:14px !important;}}</style>
+		<div class="qfe_wrapper">
+			<H1 class="qfy_title center mobilecenter"><div class="qfy_title_inner" style="display:inline-block;position:relative;max-width:100%;"><span class="line-abs " style="overflow:hidden;border-bottom-style:solid;width:250px;max-width:250px;border-bottom-width:1px;border-bottom-color:#ffffff;margin-right:20px;" ></span><div class="header_title" style="font-family:微软雅黑;font-size:32px;font-weight:bold;font-style:normal;color:#ffffff;">重新定义女装时尚</div><span class="line-abs right" style="overflow:hidden;border-bottom-style:solid;width:250px;max-width:250px;border-bottom-width:1px;border-bottom-color:#ffffff;margin-left:20px;"  ></span></div><style></style><div class="button_wrapper" style="display:none;"><div class="button " style="display:inline-block;max-width:100%;text-align:center; font-size:12px;"></div></div><span  style="clear:both;"></span></H1>
+		</div>
+	</div>
+	<div  m-padding="53px 0px 0px 0px"  p-padding="53px 0 0 0" css_animation_delay="0" qfyuuid="qfy_column_text_l55k2"  class="qfy-element qfy-text qfy-text-82173 qfe_text_column qfe_content_element  mobile_fontsize18" style="position: relative;;text-shadow: 0px 0px 4px #727272;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:53px;padding-bottom:0;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><span style="letter-spacing:0px;"><span style="font-size: 52px;"><span style="font-family: trebuchet ms;"><span style="color: rgb(255, 255, 255);">THE LATEST RELEASE IN SUMMER</span><span style="color: rgb(255, 255, 255);"></span><span style="color: rgb(255, 255, 255);"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="16px 0px 0px 0px"  p-padding="16px 0 0 0" css_animation_delay="0" qfyuuid="qfy_column_text_l55k2"  class="qfy-element qfy-text qfy-text-90722 qfe_text_column qfe_content_element  mobile_fontsize18" style="position: relative;;text-shadow: 0px 0px 4px #727272;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:16px;padding-bottom:0;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><span style="font-size:22px;"><span style="color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;">夏季时尚新品发布，重新定义女装时尚</span><span style="letter-spacing: 1px;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> <div style="margin-top:0;margin-bottom:0;padding-top:278px;padding-bottom:0;padding-right:133px;padding-left:146px;"  m-padding="278px 0px 0px 0px"  p-padding="278px 133px 0 146px" css_animation_delay="0" qfyuuid="qfy_btn_g2egv"  class="qfy-element vc_btn3-container vc_btn3-center"><a onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#999292';" onmouseenter="this.style.backgroundColor='#ffffff'; this.style.borderColor='#ffffff'; this.style.color='#ff6699';" style="font-family:微软雅黑; font-size:19px; padding-top:12px;padding-bottom:12px; border-width:1px; border-color:#ffffff; background-color:#ffffff; color:#999292;" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-qfy-custom" href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" target="">了解2017春夏最新发布</a></div>
+</div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-2-5a689786e8edc975816 > .column_inner {padding-left:1px;padding-right:1px;padding-top:0;padding-bottom:62px;}.qfe_row .vc_span_class.qfy-column-2-5a689786e8edc975816 {};}@media only screen and (max-width: 992px){.qfy-column-2-5a689786e8edc975816 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:54px;padding-bottom:38px;}.display_entire .qfe_row .vc_span_class.qfy-column-2-5a689786e8edc975816 {}.qfy-column-2-5a689786e8edc975816 > .column_inner> .background-overlay,.qfy-column-2-5a689786e8edc975816 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-3-5a689786e9ef8147282 section     bothfull  section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_dbnkz"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-3-5a689786e9ef8147282{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;}section.section.qfy-row-3-5a689786e9ef8147282 > .container{max-width:1313px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-3-5a689786e9ef8147282{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-3-5a689786ea2c7346852 qfy-column-inner  vc_span12  text-Default small-screen-undefined fullrow"  data-dw="1/1" data-fixheight="" ><div style="max-width:1179px;margin-top:20px;margin-bottom:0;margin-left:0;margin-right:10px;border-radius:0px;;position:relative;;" class="column_inner " ><div class="background-media " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/c18005f77229be6a6078772fad2ccee6.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;background-position:0 0%;;width:100%;"></div><div class=" background-overlay grid-overlay-0" style="background-color:rgba(51,51,51,0.4);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-12128 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#ff6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">加长外套</span></span></span></span><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-91825 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:15px;"><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">双击这里或点击编辑按钮来修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-90907 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#ff6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">手提箱包<span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-60390 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:16px;"><strong><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">点击编辑按钮修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">.qfy-column-3-5a689786ea2c7346852 > .column_inner:hover >.background-overlay{background-color:rgba(0,0,0,0.5) !important;}@media only screen and (min-width: 992px){.qfy-column-3-5a689786ea2c7346852 > .column_inner {padding-left:0;padding-right:0;padding-top:110px;padding-bottom:514px;}.qfe_row .vc_span_class.qfy-column-3-5a689786ea2c7346852 {};}@media only screen and (max-width: 992px){.qfy-column-3-5a689786ea2c7346852 > .column_inner{margin:10px auto 0 !important;padding-left:0;padding-right:0;padding-top:40px;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-3-5a689786ea2c7346852 {}.qfy-column-3-5a689786ea2c7346852 > .column_inner> .background-overlay,.qfy-column-3-5a689786ea2c7346852 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-4-5a689786eb12b461621 section    full   section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_gmcbx"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-4-5a689786eb12b461621{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;min-height:430px;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-4-5a689786eb12b461621{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;min-height:430px;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-4-5a689786eb4ce500285 qfy-column-inner  vc_span_class  vc_span6  text-Default small-screen-undefined notfullrow"  data-dw="1/2" data-fixheight="" ><div style="margin-top:20px;margin-bottom:0;margin-left:0;margin-right:10px;border-radius:0px;;position:relative;;" class="column_inner " ><div class="background-media " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/a862620a7de710eb5e572e75925d68f7.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;background-position:0 0%;;width:100%;"></div><div class=" background-overlay grid-overlay-0" style="background-color:rgba(51,51,51,0.4);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-66027 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#FF6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">高级化妆品<span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-80896 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:15px;"><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">双击这里或点击编辑按钮来修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">.qfy-column-4-5a689786eb4ce500285 > .column_inner:hover >.background-overlay{background-color:rgba(0,0,0,0.5) !important;}@media only screen and (min-width: 992px){.qfy-column-4-5a689786eb4ce500285 > .column_inner {padding-left:0;padding-right:0;padding-top:110px;padding-bottom:449px;}.qfe_row .vc_span_class.qfy-column-4-5a689786eb4ce500285 {width:43.453612716763004%;};}@media only screen and (max-width: 992px){.qfy-column-4-5a689786eb4ce500285 > .column_inner{margin:10px auto 0 !important;padding-left:0;padding-right:0;padding-top:40px;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-4-5a689786eb4ce500285 {width:43.453612716763004%;}.qfy-column-4-5a689786eb4ce500285 > .column_inner> .background-overlay,.qfy-column-4-5a689786eb4ce500285 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-5-5a689786ebd68361999 qfy-column-inner  vc_span_class  vc_span6  text-Default small-screen-undefined notfullrow"  data-dw="1/2" data-fixheight="" ><div style="margin-top:20px;margin-bottom:0;margin-left:10px;margin-right:0;border-radius:0px;;position:relative;;" class="column_inner " ><div class="background-media " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/54514af1f65db791bc183cd884febe76.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;background-position:0 0%;;width:100%;"></div><div class=" background-overlay grid-overlay-0" style="background-color:rgba(51,51,51,0.4);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-60645 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#ff6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">连衣裙特卖<span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-46047 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:15px;"><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">双击这里或点击编辑按钮来修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">.qfy-column-5-5a689786ebd68361999 > .column_inner:hover >.background-overlay{background-color:rgba(0,0,0,0.5) !important;}@media only screen and (min-width: 992px){.qfy-column-5-5a689786ebd68361999 > .column_inner {padding-left:0;padding-right:0;padding-top:110px;padding-bottom:449px;}.qfe_row .vc_span_class.qfy-column-5-5a689786ebd68361999 {width:56.5%;};}@media only screen and (max-width: 992px){.qfy-column-5-5a689786ebd68361999 > .column_inner{margin:10px auto 0 !important;padding-left:0;padding-right:0;padding-top:40px;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-5-5a689786ebd68361999 {width:56.5%;}.qfy-column-5-5a689786ebd68361999 > .column_inner> .background-overlay,.qfy-column-5-5a689786ebd68361999 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div class="wf-mobile-hidden qfy-clumn-clear" style="clear:both;"></div>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-5-5a689786ec6e2954425 section    full   section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_d68qf"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-5-5a689786ec6e2954425{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;}section.section.qfy-row-5-5a689786ec6e2954425 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-5-5a689786ec6e2954425{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-6-5a689786ecaaa234238 qfy-column-inner  vc_span_class  vc_span6  text-Default small-screen-undefined notfullrow"  data-dw="1/2" data-fixheight="" ><div style="margin-top:20px;margin-bottom:0;margin-left:0;margin-right:10px;border-radius:0px;;position:relative;;" class="column_inner " ><div class="background-media " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/2fabbf45a05e8fe5dc4d61820cee552a.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;background-position:0 0%;;width:100%;"></div><div class=" background-overlay grid-overlay-0" style="background-color:rgba(51,51,51,0.4);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-97902 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#FF6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">高级化妆品<span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-83367 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:15px;"><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">双击这里或点击编辑按钮来修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">.qfy-column-6-5a689786ecaaa234238 > .column_inner:hover >.background-overlay{background-color:rgba(0,0,0,0.5) !important;}@media only screen and (min-width: 992px){.qfy-column-6-5a689786ecaaa234238 > .column_inner {padding-left:0;padding-right:0;padding-top:110px;padding-bottom:314px;}.qfe_row .vc_span_class.qfy-column-6-5a689786ecaaa234238 {};}@media only screen and (max-width: 992px){.qfy-column-6-5a689786ecaaa234238 > .column_inner{margin:10px auto 0 !important;padding-left:0;padding-right:0;padding-top:40px;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-6-5a689786ecaaa234238 {}.qfy-column-6-5a689786ecaaa234238 > .column_inner> .background-overlay,.qfy-column-6-5a689786ecaaa234238 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-7-5a689786ed31b849997 qfy-column-inner  vc_span_class  vc_span6  text-Default small-screen-undefined notfullrow"  data-dw="1/2" data-fixheight="" ><div style="margin-top:20px;margin-bottom:0;margin-left:10px;margin-right:0;border-radius:0px;;position:relative;;" class="column_inner " ><div class="background-media " backgroundSize='true'  style="background-image: url('http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2016/11/04af0d54e7e3926d1cd6363fd25c0483.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll;background-position:0 0%;;width:100%;"></div><div class=" background-overlay grid-overlay-0" style="background-color:rgba(51,51,51,0.4);width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="1px 0px 0px 0px"  p-padding="1px 0px 0px 0px" css_animation_delay="0" qfyuuid="qfy_column_text_vckin"  class="qfy-element qfy-text qfy-text-64669 qfe_text_column qfe_content_element  mobile_fontsize24" style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:1px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="color:#ff6699;"><strong><span style="font-size: 24px;"><span style="letter-spacing: 0px;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;">连衣裙特卖<span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"><span style="line-height: 1;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="18px 0px 38px 0px"  p-padding="0 0px 0 0px" css_animation_delay="0" qfyuuid="qfy_column_text_t63h2"  class="qfy-element qfy-text qfy-text-3075 qfe_text_column qfe_content_element " style="position: relative;;;line-height:2em;;background-repeat: no-repeat;;padding-top:0;padding-bottom:0;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><a href="http://w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/?page_id=6394" rel="undefined" url-flag="0" url-flagtarget=""><span style="font-size:15px;"><span style="color: rgb(255, 255, 255);"><span style="display: inline-block; line-height: 1.6;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;">双击这里或点击编辑按钮来修改内容<span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="letter-spacing: 1px;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"><span style="font-family: 微软雅黑;"></span></span></span></span></span></span></span></span></span></span></span></a><span style="letter-spacing:0px;"><span style="line-height: 1;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;"></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">.qfy-column-7-5a689786ed31b849997 > .column_inner:hover >.background-overlay{background-color:rgba(0,0,0,0.5) !important;}@media only screen and (min-width: 992px){.qfy-column-7-5a689786ed31b849997 > .column_inner {padding-left:0;padding-right:0;padding-top:110px;padding-bottom:319px;}.qfe_row .vc_span_class.qfy-column-7-5a689786ed31b849997 {};}@media only screen and (max-width: 992px){.qfy-column-7-5a689786ed31b849997 > .column_inner{margin:10px auto 0 !important;padding-left:0;padding-right:0;padding-top:40px;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-7-5a689786ed31b849997 {}.qfy-column-7-5a689786ed31b849997 > .column_inner> .background-overlay,.qfy-column-7-5a689786ed31b849997 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div class="wf-mobile-hidden qfy-clumn-clear" style="clear:both;"></div>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-6-5a689786edcc8568086 section    full   section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_z7rtl"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-6-5a689786edcc8568086{padding-left:0;padding-right:0;padding-top:20px;padding-bottom:0;margin-top:0;}section.section.qfy-row-6-5a689786edcc8568086 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-6-5a689786edcc8568086{padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:0;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-8-5a689786edfd5286712 qfy-column-inner  vc_span12  text-default small-screen-undefined fullrow"  data-dw="1/1" data-fixheight="" ><div style=";position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-" style="background-color:transparent;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div id="vc_header_5a689786ee35a288"  m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_header_nkgc1"  class="qfy-element minheigh1px qfe_text_column qfe_content_element " style="position: relative;;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;"><style>@media only screen and (max-width: 760px) {#vc_header_5a689786ee35a288 .header_title{font-size:20px !important;}}@media only screen and (max-width: 760px) {#vc_header_5a689786ee35a288 .header_subtitle{font-size:14px !important;}}</style>
+		<div class="qfe_wrapper">
+			<H1 class="qfy_title center mobilecenter"><div class="qfy_title_inner" style="display:inline-block;position:relative;max-width:100%;"><span class="line-abs " style="overflow:hidden;border-bottom-style:solid;width:560px;max-width:560px;border-bottom-width:1px;border-bottom-color:#dddddd;margin-right:20px;" ></span><div class="header_title" style="font-family:微軟正黑體;font-size:30px;font-weight:bold;font-style:normal;color:#ff6699;">品牌故事</div><span class="line-abs right" style="overflow:hidden;border-bottom-style:solid;width:560px;max-width:560px;border-bottom-width:1px;border-bottom-color:#dddddd;margin-left:20px;"  ></span></div><style></style><div class="button_wrapper" style="display:none;"><div class="button " style="display:inline-block;max-width:100%;text-align:center; font-size:12px;"></div></div><span  style="clear:both;"></span></H1>
+		</div>
+	</div>
+	<div  m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_column_text_se2nc"  class="qfy-element qfy-text qfy-text-99720 qfe_text_column qfe_content_element  mobile_fontsize" style="position: relative;;;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div style="text-align: center;"><span style="color:#000000;"><span style="font-size: 15px;"><span style="font-family: lucida sans unicode;"><span style="font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.8); display: inline ! important; float: none;">BRAND STORY</span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-8-5a689786edfd5286712 > .column_inner {padding-left:0;padding-right:0;padding-top:45px;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-8-5a689786edfd5286712 {};}@media only screen and (max-width: 992px){.qfy-column-8-5a689786edfd5286712 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:45px;padding-bottom:;}.display_entire .qfe_row .vc_span_class.qfy-column-8-5a689786edfd5286712 {}.qfy-column-8-5a689786edfd5286712 > .column_inner> .background-overlay,.qfy-column-8-5a689786edfd5286712 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section><section  data-fixheight="" class="qfy-row-7-5a689786eeac446552 section    full   section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_3sqf3"  style='margin-bottom:0;border-radius:0px;color:#333333;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-7-5a689786eeac446552{padding-left:0;padding-right:0;padding-top:20px;padding-bottom:50px;margin-top:0;}section.section.qfy-row-7-5a689786eeac446552 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-7-5a689786eeac446552{padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:50px;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffffff;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-9-5a689786eee86330768 qfy-column-inner  vc_span12  text-Default small-screen-undefined fullrow"  data-dw="1/1" data-fixheight="" ><div style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;border-radius:0px;border-top:10px solid #f4f4f4;border-bottom:10px solid #f4f4f4;border-left:10px solid #f4f4f4;border-right:10px solid #f4f4f4;;position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-0" style="background-color:#f2e3e3;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" ><section  data-fixheight="" class="qfy-row-8-5a689786ef151943170 section    full   section-text-no-shadow section-inner-no-shadow section-normal"   style='margin-bottom:0;border-radius:0px;color:#000000;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-8-5a689786ef151943170{padding-left:0;padding-right:0;padding-top:0;padding-bottom:34px;margin-top:0;}section.section.qfy-row-8-5a689786ef151943170 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-8-5a689786ef151943170{padding-left:15px;padding-right:15px;padding-top:0;padding-bottom:34px;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #ffe8ed;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-10-5a689786ef3b122368 qfy-column-inner  vc_span_class  vc_span4  text-default small-screen-default notfullrow"  data-dw="1/3" data-fixheight="" ><div style=";position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-" style="background-color:transparent;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" ><style>@media only screen and (max-width: 768px) {.single_image_text-5a689786efcba765 .head{font-size: 16px !important;}.single_image_text-5a689786efcba765 .content{font-size: 16px !important;}}</style>
+	<div id="vc_img_5a689786efbf8914" style="width:100%;padding:0px;margin:0px;height:100%;clear:both;position:relative;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-repeat: no-repeat;"     m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_single_image_qw1up"  class="qfy-element bitImageControlDiv"><a class="bitImageAhover  " >
+
+	<div class="bitImageParentDiv qfe_single_image qfe_content_element vc_align_center">
+		<div class="qfe_wrapper"><span></span><img class="front_image   ag_image" src="http://static2.hk.qifeiye.com/caches/4e5b6c9361e0d687e1bdc47021325262/aHR0cDovL3ctODgyMDItMzk4NTUtNjU2MDUuNDc5MDEwNzE3OC5zaXRlcy5oazM4LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMC9kMzc3MzRlNWM5NzI1MjZjYjk0OGE4NjkyMGEzZmIzNC02MDB4NjAwLnBuZw_p_p100_p_3D_p_p100_p_3D.png" alt="shutterstock_384342568 拷贝" description=""    data-title="shutterstock_384342568 拷贝" title="" src-img ="" style='' /></div>
+	</div>
+	</div> </a></div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-10-5a689786ef3b122368 > .column_inner {padding-left:67px;padding-right:0;padding-top:22px;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-10-5a689786ef3b122368 {};}@media only screen and (max-width: 992px){.qfy-column-10-5a689786ef3b122368 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:22px;padding-bottom:;}.display_entire .qfe_row .vc_span_class.qfy-column-10-5a689786ef3b122368 {}.qfy-column-10-5a689786ef3b122368 > .column_inner> .background-overlay,.qfy-column-10-5a689786ef3b122368 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-11-5a689786eff03929588 qfy-column-inner  vc_span_class  vc_span8  text-Default small-screen-Default notfullrow"  data-dw="2/3" data-fixheight="" ><div style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;border-radius:0px;;position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-0" style="background-color:transparent;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="0px 0px 18px 0px"  p-padding="0 0 18px 0" css_animation_delay="0" qfyuuid="qfy_column_text_zn7qc"  class="qfy-element qfy-text qfy-text-6075 qfe_text_column qfe_content_element  mobile_fontsize" style="position: relative;;;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:18px;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div><span style="font-size:20px;"><span style="font-family: 华文仿宋;"><em><span style="color: rgb(102, 102, 102);"></span></em><span class="copied" data-aligning="#tran_5,#src_5" id="tran_5" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; color: rgb(102, 102, 102); font-family: Tahoma, Arial, 宋体, 'Malgun Gothic'; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.8);"></span><em><span style="color: rgb(102, 102, 102);"></span></em></span></span><span style="color:#F10180;"><span style="font-size: 22px;"><span style="display: inline-block; line-height: 1.6;"><span style="font-family: georgia;"><em><span style="font-family: 微软雅黑;">品牌介绍 </span>· About Us</em></span></span></span></span></div>
+</div>
+
+		</div>
+	</div>
+	<div  m-padding="0px 0px 0px 0px"  p-padding="0 0 0 0" css_animation_delay="0" qfyuuid="qfy_column_text_zn7qc"  class="qfy-element qfy-text qfy-text-11175 qfe_text_column qfe_content_element  mobile_fontsize12" style="position: relative;;;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="position: relative;">
+<div><span style="font-size:20px;"><span style="font-family: 华文仿宋;"><em><span style="color: rgb(102, 102, 102);"></span></em><span class="copied" data-aligning="#tran_5,#src_5" id="tran_5" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; color: rgb(102, 102, 102); font-family: Tahoma, Arial, 宋体, 'Malgun Gothic'; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(255, 255, 255, 0.8);"></span><em><span style="color: rgb(102, 102, 102);"></span></em></span></span><span style="color:#FF6699;"><span style="display: inline-block; line-height: 1.8;"><span style="font-family: georgia;"><span style="font-size: 18px;"><em>AINN. Clothing brand was established in July 2014.&#8221;Europe and the United States leisure dress wind&#8221; brand.For 20-35, deeply loves the life of fashionable women.Brand creative inspiration comes from European country away from the hustle and bustle city, advocating pure beautiful, comfortable and lazy loading of life.She actively, funny, elegant and fashion.She is not only a clothing brand, but also a kind of comfortable life attitude and lifestyle advocate.</em></span></span></span></span></div>
+</div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-11-5a689786eff03929588 > .column_inner {padding-left:35px;padding-right:78px;padding-top:82px;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-11-5a689786eff03929588 {};}@media only screen and (max-width: 992px){.qfy-column-11-5a689786eff03929588 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-11-5a689786eff03929588 {}.qfy-column-11-5a689786eff03929588 > .column_inner> .background-overlay,.qfy-column-11-5a689786eff03929588 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style><div class="wf-mobile-hidden qfy-clumn-clear" style="clear:both;"></div>        </div>
+    </div>
+
+</section></div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-9-5a689786eee86330768 > .column_inner {padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-9-5a689786eee86330768 {};}@media only screen and (max-width: 992px){.qfy-column-9-5a689786eee86330768 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;}.display_entire .qfe_row .vc_span_class.qfy-column-9-5a689786eee86330768 {}.qfy-column-9-5a689786eee86330768 > .column_inner> .background-overlay,.qfy-column-9-5a689786eee86330768 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section>                        </section>
+
+						<div class="clear"></div>
+					</div>
+				<div class="clear"></div>
+
+			</div>
+			<!-- page-outer-wrapper -->
+
+		</div>
+		<!-- END .row-wrapper -->
+
+		<div class="clear"></div>
+
+     </div>
+<!-- END .main-outer-wrapper  -->
+
+			</div>
+
+    			</div><!-- .wf-container -->
+		</div><!-- .wf-wrap -->
+	</div><!-- #main -->
+	<footer id="footer" class="footer"  >
+	<div class="wf-wrap">
+		<div class="wf-container qfe_row footer1" bitDataAction='site_widget_container' bitdatamarker="sidebar_2" >
+			<section id="simplepage-2"  style="margin-top:0;margin-bottom:0;" class="widget simplepage site_tooler"><style class='style_simplepage-2'>#simplepage-2 .widget-title{padding:0 0 0 10px;height:28px;line-height:28px;background-color:transparent;margin:0px;font-family:;font-size:px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;border-top:1px solid transparent;border-left:1px solid transparent;border-right:1px solid transparent;border-bottom:0px solid transparent;background-image:none;-webkit-border-top-left-radius: 4px;-webkit-border-top-right-radius: 4px;-moz-border-radius-topleft: 4px;-moz-border-radius-topright: 4px;border-top-left-radius: 4px;border-top-right-radius: 4px;} #simplepage-2 .widget-title{border-top:0;border-left:0;border-right:0;} #simplepage-2 .bitWidgetFrame{border-bottom:0;border-top:0;border-left:0;border-right:0;padding:4px 10px 4px 10px;}#simplepage-2{-webkit-box-shadow:none;box-shadow:none;}#simplepage-2 .bitWidgetFrame{background-color:transparent;background-image:none;-webkit-border-bottom-left-radius: 4px;border-bottom-left-radius: 4px;-webkit-border-bottom-right-radius: 4px;border-bottom-right-radius: 4px;}#simplepage-2 .bitWidgetFrame{padding-left:0px;padding-right:0px;}body #simplepage-2 .bitWidgetFrame{padding-top:0px !important;padding-bottom:0px !important;}</style><div class='simplepage_container bitWidgetFrame' data-post_id='8783' ><section  data-fixheight="" class="qfy-row-9-5a689786f100650865 section     no  section-text-no-shadow section-inner-no-shadow section-normal"  id="bit_w6pbu"  style='margin-bottom:0;border-radius:0px;color:#000000;' >
+    <style class="row_class qfy_style_class">
+	@media only screen and (min-width: 992px){
+		section.section.qfy-row-9-5a689786f100650865{padding-left:0;padding-right:0;padding-top:20px;padding-bottom:0;margin-top:0;}section.section.qfy-row-9-5a689786f100650865 > .container{max-width:1280px;margin:0 auto;}}
+
+	   @media only screen and (max-width: 992px){
+		.bit-html section.section.qfy-row-9-5a689786f100650865{padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:0;margin-top:0;}}
+	</style>
+    	    <div class="section-background-overlay background-overlay grid-overlay-0 " style="background-color: #eaeaea;"></div>
+
+    <div class="container">
+        <div class="row qfe_row">
+            <div   data-animaleinbegin="bottom-in-view" data-animalename="qfyfadeInUp"  data-duration="" data-delay=""  class=" qfy-column-12-5a689786f1267978990 qfy-column-inner  vc_span12  text-default small-screen-undefined fullrow"  data-dw="1/1" data-fixheight="" ><div style=";position:relative;;" class="column_inner " ><div class=" background-overlay grid-overlay-" style="background-color:transparent;width:100%;"></div><div class="column_containter" style="z-index:3;position:relative;" >
+	<div  m-padding="7px 0px 11px 0px"  p-padding="7px 0 11px 0" css_animation_delay="0" qfyuuid="qfy_column_text_7fmx9"  class="qfy-element qfy-text qfy-text-2082 qfe_text_column qfe_content_element  mobile_fontsize" style="position: relative;;;line-height:1.5em;;background-repeat: no-repeat;;margin-top:0;margin-bottom:0;padding-top:7px;padding-bottom:11px;padding-right:0;padding-left:0;border-radius:0px;">
+		<div class="qfe_wrapper">
+			<div style="text-align: center;"><span style="color:#FF6699;"><span style="font-size: 13px;"><span style="font-family: 微软雅黑;">雄安新区陆文大道99号 &nbsp; 营业时间：<span style="font-size: 13px;"><span style="font-family: 微软雅黑;">周一至周五，</span></span>9:00 – 18:00</span></span></span></div>
+
+<div style="text-align: center;"><span style="color:#FF6699;"><span style="font-size: 13px;"><span style="font-family: 微软雅黑;">sunsngsoon@gmail.com</span></span><span style="font-size: 13px;"><span style="font-family: 微软雅黑;">&nbsp;&nbsp;&nbsp;&nbsp;18706171738</span></span></span></div>
+
+		</div>
+	</div> </div></div></div><style class="column_class qfy_style_class">@media only screen and (min-width: 992px){.qfy-column-12-5a689786f1267978990 > .column_inner {padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;}.qfe_row .vc_span_class.qfy-column-12-5a689786f1267978990 {};}@media only screen and (max-width: 992px){.qfy-column-12-5a689786f1267978990 > .column_inner{margin:0 auto 0 !important;padding-left:0;padding-right:0;padding-top:;padding-bottom:;}.display_entire .qfe_row .vc_span_class.qfy-column-12-5a689786f1267978990 {}.qfy-column-12-5a689786f1267978990 > .column_inner> .background-overlay,.qfy-column-12-5a689786f1267978990 > .column_inner> .background-media{width:100% !important;left:0 !important;right:auto !important;}}</style>        </div>
+    </div>
+
+</section></div></section>		</div><!-- .wf-container -->
+							</div><!-- .wf-wrap -->
+	<!--  ************begin************* -->
+<style type="text/css" id="static-stylesheet-footer">
+#footer.footer .footer1 .widget{width: 99%;}#footer.footer .footer1 .widget.simplepage{width: 100%;}#footer.footer .footer2 .widget{width: 99%;}#footer.footer .footer2 .widget.simplepage{width: 100%;}#footer.footer .footer3 .widget{width: 99%;}#footer.footer .footer3 .widget.simplepage{width: 100%;}.bit_main_content{margin-top:0px;margin-bottom:0px}
+#footer .wf-wrap {padding:0;}
+</style>
+<!--  ************end************* -->
+</footer>
+		<!-- !Bottom-bar -->
+<div id="bottom-bar" role="contentinfo" class="bottom-bit-bar" >
+		<div class="wf-wrap">
+			<div class="wf-table wf-mobile-collapsed">
+
+
+													<div >
+						<div class="wf-float-center">
+							<div>
+<div><span style="color:#696969;"><span style="font-size: 14px;"><span style="font-family: 微软雅黑;">[[公司名称]]版权所有 [[ICP备案号]]</span></span></span></div>
+</div>
+						</div>
+					</div>
+																	<div  id="footer_band" style="clear:both;">
+						<div class="wf-float-center"  style="padding:2px 0;">
+							由<a href='#' rel='nofollow' target='_BLANK' style='color:#0088C2;'>孙轩明</a>提供技术支持						</div>
+					</div>
+							</div>
+		</div><!-- .wf-wrap -->
+	</div><!-- #bottom-bar -->
+
+
+<div id='right_nav_bar_scroll' style='position: absolute;top:163px;'></div><ul class="right_nav_bar"  style="margin-top:101px;display:none;"   data-pop='glass' data-hovercolor="#df9aea" data-bgcolor="#ef7ae0" ><li ><a href="tel:18861511017"><div  style="background-color:#ef7ae0;" class="phone-icon icons" data-file=""  data-desc="18861511017"  data-color=""  data-hovercolor=""><i class="icon" ></i><span class="title"  >18861511017</span></div></a></li><li ><a target=_blank href="http://关注微信号:Umdear"><div  style="background-color:#ef7ae0;" class="weixin-icon icons" data-file="//w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2018/01/353b03d6d99d250ee09f60ed1a8e3c01.jpg"  data-desc="关注微信号:Umdear"  data-color=""  data-hovercolor=""><i class="icon" style='background:url(//w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2018/01/353b03d6d99d250ee09f60ed1a8e3c01.jpg)'></i><span class="title"  >关注微信号:Umdear</span></div></a></li><li ><a href="http://wpa.qq.com/msgrd?v=3&uin=qq1370958525&site=qq&menu=yes" target=_blank ><div  style="background-color:#ef7ae0;" class="qq-icon icons" data-file="//w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2018/01/e6516c99477b63c4a82a2795c2e771af.jpg"  data-desc="qq1370958525"  data-color=""  data-hovercolor=""><i class="icon" style='background:url(//w-88202-39855-65605.4790107178.sites.hk38.qifeiye.com/qfy-content/uploads/2018/01/e6516c99477b63c4a82a2795c2e771af.jpg)'></i><span class="title"  >qq1370958525</span></div></a></li><li ><a target=_blank href="http://1370958525"><div  style="background-color:#ef7ae0;" class="support-icon icons" data-file=""  data-desc="客服咨询"  data-color=""  data-hovercolor=""><i class="icon" ></i><span class="title"  >客服咨询</span></div></a></li><li ><div  style="background-color:#ef7ae0;cursor:pointer" class="totop-icon icons"  ><i class="icon"></i></div></li></div>
+<a href="#" class="scroll-top "></a>
+
+</div><!-- #page -->
+
+<style type='text/css'>
+
+</style>
+<div style='display:none;'></div></body>
+
 </html>
